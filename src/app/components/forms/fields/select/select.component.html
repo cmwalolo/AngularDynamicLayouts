@@ -1,0 +1,9 @@
+<div class="form-group">
+  <label for="{{configModel.name}}">{{configModel.label}}</label>
+  <select class="form-control" required type="text" (input)="onInput($event.target.value)" value="{{value}}">
+   </select>
+
+   <div *ngIf="!valid && !pristine" class="alert alert-danger">
+      {{configModel.mandatoryMessage}}
+   </div>
+</div>
