@@ -1,0 +1,9 @@
+    <form (ngSubmit)="onSubmit()">
+        <!-- <div *ngFor="let item of configModel; let i = index">
+          <cw-form-input  [maxlength]="20" #myForm="ngModel" name="{{configModel[i].name}}" [config]="configModel[i]" [(ngModel)]="model[configModel[i].name]"></cw-form-input>
+        </div> -->
+        <ng-template #dynamicForm></ng-template>
+
+      <button type="submit" class="btn btn-success">Submit</button>
+      <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button>
+    </form>

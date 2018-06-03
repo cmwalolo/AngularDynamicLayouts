@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-xl-12">
+        <h2 class="text-muted page-header">
+                {{configModel.header}}
+        </h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <i class="fa fa-dashboard"></i> <a href="Javascript:void(0)" [routerLink]="['/dashboard']">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active"><i class="fa {{configModel.icon}}"></i>{{configModel.header}}</li>
+        </ol>
+    </div>
+</div>
