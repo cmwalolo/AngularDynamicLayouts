@@ -1,6 +1,10 @@
-# Admin
+# AngularDynamicLayouts 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
+The purpose is to enable dynmaic creation of layouts.
+http://localhost:4200/forms is dynamically loaded by a single configuration object
+Just to play around, and learn Angular 
+
 
 ## Development server
 
