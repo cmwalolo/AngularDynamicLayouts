@@ -4,6 +4,8 @@ import { FormsModule }   from '@angular/forms';
 import { ContainerDirective } from './exports';
 import { RouterModule } from '@angular/router';
 
+export *  from './exports';
+
 @NgModule({
   imports: [
     CommonModule, FormsModule, RouterModule,
