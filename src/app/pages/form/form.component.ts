@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { InputConfigModel, SelectConfigModel, FieldsetConfigModel, FormConfigModel,  DynFormComponent } from '../../components/forms/exports';
-import { InputComponent, FieldsetComponent, SelectComponent} from '../../components/forms/exports';
+import { InputConfigModel, SelectConfigModel, FieldsetConfigModel, FormConfigModel,  DynFormComponent } from '../../components/dyn-core.module';
+import { InputComponent, FieldsetComponent, SelectComponent} from '../../components/dyn-core.module';
+import { DivConfigModel, DivComponent, PageConfigModel, PageHeaderComponent } from '../../components/dyn-core.module';
 
 import { Model} from '../../models/model';
-import { DivConfigModel, DivComponent, PageConfigModel, PageHeaderComponent } from '../../components/basics/exports';
 
 @Component({
     selector: 'app-form',

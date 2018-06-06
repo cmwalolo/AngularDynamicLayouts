@@ -1,6 +1,5 @@
 import { Component, forwardRef, HostBinding, Input, ContentChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, NG_VALIDATORS, Validators, AbstractControl, NgModel } from '@angular/forms';
-import { ComponentConfigModel } from '../../core/exports';
 
 @Component({
   selector: 'cw-form-basic',
