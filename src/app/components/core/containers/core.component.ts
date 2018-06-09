@@ -19,7 +19,7 @@ export class CoreComponent implements OnInit   {
     elementRef.nativeElement.className = configModel.className;
     configModel.children.forEach(obj => {
           let  factories = Array.from(componentFactoryResolver['_factories'].keys());
-          let factoryClass = <Type<any>>factories.find((x: any) => x.name ===obj.component);
+          let factoryClass =  <Type<any>>factories.find((x: any) => x.key === obj.component);
           const factory = componentFactoryResolver.resolveComponentFactory(factoryClass);
          let componentRef = host.createComponent(factory);
          (<CoreComponent>componentRef.instance).configModel = obj;

@@ -9,6 +9,8 @@ import { ContainerDirective, CoreComponent} from '../../core/exports';
   styleUrls: ['./form.component.css']
 })
 export class DynFormComponent extends CoreComponent implements OnInit {
+  public static key = "DynFormComponent";
+  
   @ViewChild('dynamicForm', {read: ViewContainerRef}) host : ViewContainerRef;
 
   @Input() configModel: any;

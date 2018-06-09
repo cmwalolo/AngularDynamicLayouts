@@ -15,6 +15,8 @@ import { PropertyComponent} from '../../fields/property.component';
   styleUrls: ['./fieldset.component.css']
 })
 export class FieldsetComponent extends CoreComponent implements OnInit   {
+  public static key = "FieldsetComponent";
+  
   @ViewChild('dynamicForm', {read: ViewContainerRef}) host : ViewContainerRef;
 
   @Input() configModel: any;

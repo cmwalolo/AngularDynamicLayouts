@@ -10,6 +10,7 @@ import { DivConfigModel } from '../../configs/div-config.model';
   styleUrls: ['./div.component.css']
 })
 export class DivComponent extends CoreComponent  {
+  public static key = "DivComponent";
   @ViewChild('dynamicComponent', {read: ViewContainerRef}) host:ViewContainerRef;
   
   submitted = false;

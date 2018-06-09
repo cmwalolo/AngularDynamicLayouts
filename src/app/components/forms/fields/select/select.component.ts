@@ -21,6 +21,8 @@ import { PropertyComponent} from '../property.component';
 ]
 })
 export class SelectComponent extends PropertyComponent implements ControlValueAccessor     {
+  static key = "SelectComponent";
+    
   @Input() config: SelectConfigModel;
 
   constructor() { super(); }
