@@ -1,14 +1,16 @@
-import {Input, Compiler, Injector, NgModule, NgModuleRef, ComponentFactoryResolver, Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import {Input, Compiler, Injector, NgModule, NgModuleRef, ComponentFactoryResolver, Component, OnInit, ViewChild, ViewContainerRef, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { PropertyComponent, InputConfigModel, InputComponent, SelectConfigModel, SelectComponent} from '../exports';
-import { ContainerDirective} from '../../core/exports';
+import { ContainerDirective, CoreComponent} from '../../core/exports';
 
 @Component({
   selector: 'cw-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class DynFormComponent implements OnInit {
+export class DynFormComponent extends CoreComponent implements OnInit {
+  public static key = "DynFormComponent";
+  
   @ViewChild('dynamicForm', {read: ViewContainerRef}) host : ViewContainerRef;
 
   @Input() configModel: any;
@@ -17,28 +19,18 @@ export class DynFormComponent implements OnInit {
   submitted = false;
   
   constructor(private _compiler: Compiler,
-              private _injector: Injector,
-              private _m: NgModuleRef<any>,
-              private componentFactoryResolver: ComponentFactoryResolver) { }
+    private _injector: Injector,
+    private _m: NgModuleRef<any>,
+    private elementRef: ElementRef,
+    private componentFactoryResolver: ComponentFactoryResolver) { super(); }
 
   ngOnInit() {
      console.log(this.configModel);
-     this.loadComponent();
+     this.loadComponent(this.host, this.elementRef, this.componentFactoryResolver);
   }
 
   onSubmit() { 
     console.log(this.modelValue);
     this.submitted = true; 
-  }
-
-
-  loadComponent() {
-    this.configModel.children.forEach(obj => {
-         let componentFactory = this.componentFactoryResolver.resolveComponentFactory(obj.component);
-         let viewContainerRef = this.host;
-         let componentRef = viewContainerRef.createComponent(componentFactory);
-         (<PropertyComponent>componentRef.instance).configModel = obj;
-         (<PropertyComponent>componentRef.instance).modelValue = this.modelValue;
-    });
   }
 }

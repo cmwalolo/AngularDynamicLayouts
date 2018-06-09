@@ -1,4 +1,5 @@
 import { ComponentConfigModel } from '../../core/exports';
+import { AnyTypeAnnotation } from 'babel-types';
 
 
 export class DivConfigModel extends ComponentConfigModel {
@@ -6,7 +7,7 @@ export class DivConfigModel extends ComponentConfigModel {
         public component: any,
         public id: string,
         public label: string,
-        public className: string,
+        public className:string,
         public children: any[]
-      ) {  super() }
+      ) {  super(component, className, children); }
 }

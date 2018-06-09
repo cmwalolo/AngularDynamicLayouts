@@ -8,8 +8,8 @@ import { CoreComponent } from '../../../core/exports';
     styleUrls: ['./page-header.component.scss']
 })
 export class PageHeaderComponent extends CoreComponent implements OnInit {
-    
-    constructor() { super() }
+    public static key = "PageHeaderComponent";
+    constructor() { super(); }
 
     ngOnInit() {}
 }

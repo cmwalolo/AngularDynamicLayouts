@@ -17,20 +17,20 @@ export class FormComponent implements OnInit {
     model = new Model(18, 'Dr IQ', '50', 'Chuck Overstreet');
     configModel = 
 
-    new DivConfigModel(DivComponent, "main", "", "main-container",
-        [   new PageConfigModel(PageHeaderComponent, "Sample form", "fa-form", null),
-            new FormConfigModel(DynFormComponent, "myForm", 
+    new DivConfigModel("DivComponent", "main", "", "main-container",
+        [   new PageConfigModel("PageHeaderComponent", "Sample form", "fa-form", null),
+            new FormConfigModel("DynFormComponent", "myForm", 
             [
-                new DivConfigModel(DivComponent, "","", "row",
+                new DivConfigModel("DivComponent", "","", "row",
                 [
-                    new DivConfigModel(DivComponent, "", "", "col-md-6",      
+                    new DivConfigModel("DivComponent", "", "", "col-md-6",      
                                 [
-                                    new InputConfigModel(InputComponent, "name", "name", "Name", true, "Name is mandatory", null, "Enter your full name"),
-                                    new InputConfigModel(InputComponent, "alterego", "alterEgo", "Alter Ego", true, "Alter ego is mandatory", null,"Alter Ego")
+                                    new InputConfigModel("InputComponent", "name", "name", "Name", true, "Name is mandatory", null, "Enter your full name"),
+                                    new InputConfigModel("InputComponent", "alterego", "alterEgo", "Alter Ego", true, "Alter ego is mandatory", null,"Alter Ego")
                                 ]),
-                    new DivConfigModel(DivComponent, "", "", "col-md-6",      
+                    new DivConfigModel("DivComponent", "", "", "col-md-6",      
                             [
-                                new SelectConfigModel(SelectComponent, "alterego", "alterEgo", "Alter Ego", true, "Alter ego is mandatory", null, null, "Alter Ego")
+                                new SelectConfigModel("SelectComponent", "alterego", "alterEgo", "Alter Ego", true, "Alter ego is mandatory", null, null, "Alter Ego")
                             ]) 
                 ]
             )])

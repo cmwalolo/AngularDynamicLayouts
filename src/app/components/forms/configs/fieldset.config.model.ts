@@ -6,5 +6,5 @@ export class FieldsetConfigModel extends ComponentConfigModel {
         public id: string,
         public label: string,
         public children: any[]
-      ) {  super() }
+      ) {  super(component, null, children) }
 }
