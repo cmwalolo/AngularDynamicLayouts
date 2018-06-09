@@ -7,5 +7,5 @@ export class PageConfigModel extends ComponentConfigModel  {
         public header: string, 
         public icon: string, 
         public links: LinkModel[],
-      ) {  super() }
+      ) {  super(component, "", null) }
 }

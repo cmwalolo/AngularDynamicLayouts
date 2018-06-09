@@ -6,5 +6,5 @@ export class FormConfigModel extends ComponentConfigModel {
         public component: any,
         public id: string,
         public children: any[]
-      ) {  super() }
+      ) {  super(component, null, children) }
 }

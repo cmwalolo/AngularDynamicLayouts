@@ -12,5 +12,5 @@ export class SelectConfigModel extends ComponentConfigModel {
         public validator: any[],
         public options: any[],
         public placeholder?: string,
-      ) {  super() }
+      ) {  super(component, null, null) }
 }

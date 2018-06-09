@@ -14,27 +14,16 @@ export class DivComponent extends CoreComponent  {
   
   submitted = false;
   
-  constructor(private _compiler: Compiler,
-              private _injector: Injector,
-              private _m: NgModuleRef<any>,
-              private componentFactoryResolver: ComponentFactoryResolver,
-              private elementRef : ElementRef
-            ) {  super();}
+  constructor(public _compiler: Compiler,
+              public _injector: Injector,
+              public _m: NgModuleRef<any>,
+              public componentFactoryResolver: ComponentFactoryResolver,
+              public elementRef : ElementRef
+            ) {  super()}
 
   ngOnInit() {
-     this.loadComponent();
+     this.loadComponent(this.host, this.elementRef, this.componentFactoryResolver);
   }
 
 
-  loadComponent() {
-    var configModel  = <DivConfigModel> this.configModel;  
-    this.elementRef.nativeElement.className = configModel.className;
-    configModel.children.forEach(obj => {
-         let componentFactory = this.componentFactoryResolver.resolveComponentFactory(obj.component);
-         let viewContainerRef = this.host;
-         let componentRef = viewContainerRef.createComponent(componentFactory);
-         (<CoreComponent>componentRef.instance).configModel = obj;
-         (<CoreComponent>componentRef.instance).modelValue =  this.modelValue;
-    });
-  }
 }

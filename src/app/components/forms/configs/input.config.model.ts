@@ -12,5 +12,5 @@ export class InputConfigModel extends ComponentConfigModel {
         public mandatoryMessage: string,
         public validator: any[],
         public placeholder?: string,
-      ) { super() }
+      ) { super(component, null, null) }
 }

@@ -9,7 +9,7 @@ import { CoreComponent } from '../../../core/exports';
 })
 export class PageHeaderComponent extends CoreComponent implements OnInit {
     
-    constructor() { super() }
+    constructor() { super(); }
 
     ngOnInit() {}
 }
