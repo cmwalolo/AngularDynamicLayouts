@@ -1,7 +1,7 @@
 import {ElementRef, Input, Compiler, Injector, NgModule, NgModuleRef, ComponentFactoryResolver, Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
-import { ContainerDirective, CoreComponent} from '../../../core/exports';
+import {  CoreComponent} from '../../../core/exports';
 import { DivConfigModel } from '../../configs/div-config.model';
 
 @Component({

@@ -6,7 +6,7 @@ import { InputComponent} from '../../fields/input/input.component';
 import { SelectConfigModel} from '../../configs/select.config.model';
 import { SelectComponent} from '../../fields/select/select.component';
 
-import { ContainerDirective, CoreComponent} from '../../../core/exports';
+import { CoreComponent} from '../../../core/exports';
 import { PropertyComponent} from '../../fields/property.component';
 
 @Component({

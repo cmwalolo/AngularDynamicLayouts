@@ -1,7 +1,7 @@
 import {Input, Compiler, Injector, NgModule, NgModuleRef, ComponentFactoryResolver, Component, OnInit, ViewChild, ViewContainerRef, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { PropertyComponent, InputConfigModel, InputComponent, SelectConfigModel, SelectComponent} from '../exports';
-import { ContainerDirective, CoreComponent} from '../../core/exports';
+import { CoreComponent} from '../../core/exports';
 
 @Component({
   selector: 'cw-form',

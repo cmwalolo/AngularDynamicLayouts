@@ -4,9 +4,6 @@ import { FormsModule }   from '@angular/forms';
 import { DivComponent, PageHeaderComponent } from '../basics/exports';
 import { RouterModule } from '@angular/router';
 import { DynCoreModule} from '../core/dyn-core.module';
-import { ContainerDirective } from '../core/exports';
-
-
 
 @NgModule({
   imports: [
