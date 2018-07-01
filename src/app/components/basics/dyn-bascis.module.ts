@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule }   from '@angular/forms';
-import { DivComponent, PageHeaderComponent } from '../basics/exports';
+import { DivComponent } from './containers/div/div.component';
+import { PageHeaderComponent } from './containers/page-header/page-header.component';
 import { RouterModule } from '@angular/router';
-import { DynCoreModule} from '../core/dyn-core.module';
+
+export { PageHeaderComponent } from './containers/page-header/page-header.component';
+export { DivComponent } from './containers/div/div.component';
+export {DivConfigModel} from './configs/div-config.model';
+export {PageConfigModel} from './configs/page-config';
+
 
 @NgModule({
   imports: [
-    CommonModule, FormsModule, RouterModule, DynCoreModule
+    CommonModule, FormsModule, RouterModule
   ],
   declarations: [DivComponent, PageHeaderComponent], 
   exports: [ DivComponent],
@@ -16,6 +22,4 @@ import { DynCoreModule} from '../core/dyn-core.module';
 export class DynBasicsModule { }
 
 
-export { PageHeaderComponent } from './containers/page-header/page-header.component';
-export { DivComponent } from './containers/div/div.component';
-export * from './configs/exports';
+

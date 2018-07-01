@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageStateService } from '../components/core/services/state/page-state.service';
 
 @Component({
     selector: 'app-layout',
@@ -6,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
-    constructor() {}
+    constructor(private pageStateService: PageStateService) {}
 
-    ngOnInit() {}
+    ngOnInit() {
+       this.pageStateService.GetPageModel()
+               .subscribe(model => {
+                   console.log(model);
+               });       
+    }
 }

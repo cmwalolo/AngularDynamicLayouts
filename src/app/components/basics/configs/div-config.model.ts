@@ -1,13 +1,13 @@
-import { ComponentConfigModel } from '../../core/exports';
+import { ComponentConfigModel } from '../../core/dyn-core.module';
 import { AnyTypeAnnotation } from 'babel-types';
 
 
 export class DivConfigModel extends ComponentConfigModel {
     constructor(
         public component: any,
-        public id: string,
+        public componentId:any,
         public label: string,
         public className:string,
         public children: any[]
-      ) {  super(component, className, children); }
+      ) {  super(component, componentId, className, children); }
 }

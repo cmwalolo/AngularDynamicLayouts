@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-import { InputConfigModel, SelectConfigModel, FieldsetConfigModel, FormConfigModel, DynFormComponent } from '../../components/dyn-core.module';
-import { InputComponent, FieldsetComponent, SelectComponent} from '../../components/dyn-core.module';
-import { DivConfigModel, DivComponent, PageConfigModel, PageHeaderComponent } from '../../components/dyn-core.module';
-
 import { Model} from '../../models/model';
+import { DivConfigModel, PageConfigModel } from '../../components/basics/dyn-bascis.module';
+import { FormConfigModel, InputConfigModel, SelectConfigModel } from '../../components/forms/configs/exports';
 
 @Component({
     selector: 'app-dashboard',
@@ -16,22 +13,23 @@ export class DashboardComponent implements OnInit {
     public sliders: Array<any> = [];
 
     model = new Model(18, 'Dr IQ', '50', 'Chuck Overstreet');
+    id = 1; 
     configModel = 
 
-    new DivConfigModel("DivComponent", "main", "", "main-container",
-        [   new PageConfigModel("PageHeaderComponent", "Dashboard", "fa-dashboard", null),
-            new FormConfigModel("DynFormComponent", "myForm", 
+    new DivConfigModel("DivComponent", this.id++,  "", "main-container",
+        [   new PageConfigModel("PageHeaderComponent", this.id++, "Dashboard", "fa-dashboard", null),
+            new FormConfigModel("DynFormComponent", this.id++, "myForm", 
             [
-                new DivConfigModel("DivComponent", "","", "row",
+                new DivConfigModel("DivComponent",this.id++,"", "row",
                 [
-                    new DivConfigModel("DivComponent", "", "", "col-md-6",      
+                    new DivConfigModel("DivComponent", this.id++, "", "col-md-6",      
                                 [
-                                    new InputConfigModel("InputComponent", "name", "name", "Name", true, "Name is mandatory", null, "Enter your full name"),
-                                    new InputConfigModel("InputComponent", "alterego", "alterEgo", "Alter Ego", true, "Alter ego is mandatory", null,"Alter Ego")
+                                    new InputConfigModel("InputComponent", this.id++, "name", "Name", true, "Name is mandatory", null, "Enter your full name"),
+                                    new InputConfigModel("InputComponent", this.id++, "alterEgo", "Alter Ego", true, "Alter ego is mandatory", null,"Alter Ego")
                                 ]),
-                    new DivConfigModel("DivComponent", "", "", "col-md-6",      
+                    new DivConfigModel("DivComponent", this.id++, "", "col-md-6",      
                             [
-                                new SelectConfigModel("SelectComponent", "alterego", "alterEgo", "Alter Ego", true, "Alter ego is mandatory", null, null, "Alter Ego")
+                                new SelectConfigModel("SelectComponent", this.id++,  "alterEgo", "Alter Ego", true, "Alter ego is mandatory", null, null, "Alter Ego")
                             ]) 
                 ]
             )])

@@ -1,10 +1,10 @@
-import { ComponentConfigModel } from '../../core/exports';
+import { ComponentConfigModel } from '../../core/dyn-core.module';
 
 
 export class SelectConfigModel extends ComponentConfigModel {
     constructor(
         public component: any,
-        public id: string,
+        public componentId:any,
         public name: string,
         public label: string,
         public mandatory: boolean,
@@ -12,5 +12,5 @@ export class SelectConfigModel extends ComponentConfigModel {
         public validator: any[],
         public options: any[],
         public placeholder?: string,
-      ) {  super(component, null, null) }
+      ) {  super(component, componentId, null, null) }
 }

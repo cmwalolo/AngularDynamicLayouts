@@ -7,6 +7,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AuthGuard } from './shared';
 import { DynFormModule } from './components/forms/dyn-form.module';
 import { FormsModule }   from '@angular/forms';
+import { DynCoreModule } from './components/core/dyn-core.module';
+import { DynBasicsModule, DesignerModule } from './components/dyncomponents.module';
 
 @NgModule({
   declarations: [
@@ -17,9 +19,12 @@ import { FormsModule }   from '@angular/forms';
     NgbModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
-    DynFormModule, FormsModule
+    DynFormModule, FormsModule, DynCoreModule, DynBasicsModule, DesignerModule
   ],
-  providers: [SidebarService, AuthGuard],
+  providers: [
+    SidebarService, 
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule  {
