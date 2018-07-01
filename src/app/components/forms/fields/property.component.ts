@@ -1,5 +1,6 @@
-import { Component, forwardRef, HostBinding, Input, ContentChild } from '@angular/core';
+import { Component, forwardRef, HostBinding, Input, ContentChild, ComponentFactoryResolver, ElementRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, NG_VALIDATORS, Validators, AbstractControl, NgModel } from '@angular/forms';
+import { CoreComponent } from '../../core/dyn-core.module';
 
 @Component({
   selector: 'cw-form-basic',
@@ -18,17 +19,23 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR, NG_VALIDATORS, Validators, Abs
     }
 ]
 })
-export class PropertyComponent implements ControlValueAccessor {
+export class PropertyComponent extends CoreComponent implements ControlValueAccessor {
   @Input() modelValue:any;
   @Input() configModel: any;
 
   valid: boolean; 
   pristine:boolean; 
+  disabled:boolean;
 
-  constructor() {
-    this.valid = false;
-    this.pristine = true;
-  }
+  constructor(
+    public componentFactoryResolver: ComponentFactoryResolver,
+    public elementRef : ElementRef
+  ) {  super(componentFactoryResolver, elementRef); 
+        this.valid = false;
+        this.pristine = true;
+        this.disabled = false;
+    }
+
 
   get value() {
       return this.modelValue[this.configModel.name];
@@ -62,6 +69,11 @@ export class PropertyComponent implements ControlValueAccessor {
   
   validate()  {
     this.valid = this.value != "";
+  }
+
+  setDisabledState?(isDisabled: boolean)
+  {
+     this.disabled = isDisabled; 
   }
 
 }

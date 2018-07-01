@@ -1,10 +1,11 @@
-import { ComponentConfigModel } from '../../core/exports';
+import { ComponentConfigModel } from '../../core/dyn-core.module';
 
 export class FieldsetConfigModel extends ComponentConfigModel {
     constructor(
         public component: any,
-        public id: string,
+        public componentId: any,
         public label: string,
+        public className: string,
         public children: any[]
-      ) {  super(component, null, children) }
+      ) {  super(component, componentId, null, children) }
 }

@@ -1,6 +1,7 @@
-<div class="form-group">
+<div class="form-group cw-rel">
+    <div cw-edit-bar [parent]="this"></div>
   <label for="{{configModel.name}}">{{configModel.label}}</label>
-  <select class="form-control" required type="text" (input)="onInput($event.target.value)" value="{{value}}">
+  <select [attr.disabled]="disabled ? '' : null" class="form-control" required type="text" (input)="onInput($event.target.value)" value="{{value}}">
    </select>
 
    <div *ngIf="!valid && !pristine" class="alert alert-danger">

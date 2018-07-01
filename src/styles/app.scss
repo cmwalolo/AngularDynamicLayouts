@@ -4,3 +4,46 @@
 @import "utils";
 @import "rtl";
 @import "responsive";
+
+.cw-edit-bar2 {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .cw-rel
+  {
+      position:relative;
+  }
+
+  .cw-edit-bar-overlay {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    color:black;
+  }
+
+  .cw-edit-bar-overlay:hover {
+    border-width:5px;
+    border-style:dashed;
+    border-color:gray;
+  }  
+
+  .cw-edit-bar-toolbar
+  {
+      float:right;
+      display:none;
+  }
+
+  .cw-edit-bar-overlay:hover .cw-edit-bar-toolbar
+  {
+      display:block;
+  }
+
+.cw-edit-bar-parent {
+  //  padding-top:30px;
+}
+

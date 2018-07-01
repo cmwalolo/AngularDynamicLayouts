@@ -1,11 +1,12 @@
-import { LinkModel, ComponentConfigModel } from "../../core/exports";
+import { LinkModel, ComponentConfigModel } from "../../core/dyn-core.module";
 
 export class PageConfigModel extends ComponentConfigModel  {
 
     constructor(
         public component: any,
+        public componentId: any,
         public header: string, 
         public icon: string, 
         public links: LinkModel[],
-      ) {  super(component, "", null) }
+      ) {  super(component, componentId, null, null) }
 }

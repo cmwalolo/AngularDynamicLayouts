@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ComponentFactoryResolver, ElementRef } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CoreComponent } from '../../../core/exports';
+import { CoreComponent } from '../../../core/dyn-core.module';
 
 @Component({
     selector: 'app-page-header',
@@ -9,7 +9,6 @@ import { CoreComponent } from '../../../core/exports';
 })
 export class PageHeaderComponent extends CoreComponent implements OnInit {
     public static key = "PageHeaderComponent";
-    constructor() { super(); }
-
+    
     ngOnInit() {}
 }

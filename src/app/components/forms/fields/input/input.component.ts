@@ -23,9 +23,9 @@ import { PropertyComponent} from '../property.component';
 export class InputComponent extends PropertyComponent implements ControlValueAccessor {
   public static key = "InputComponent";
     
-  @Input() configModel: InputConfigModel;
-  @Input() modelValue:string;
-
-  constructor() { super(); }
+  ngOnInit() {
+      this.canHaveChildren = false;
+      this.loadComponent(this.host, this.elementRef, this.componentFactoryResolver);
+ }
 
 }
